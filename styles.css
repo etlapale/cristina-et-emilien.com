@@ -1,3 +1,21 @@
+@property --reddish {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #8c2133;
+}
+
+@property --pinkish {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #FF8492;
+}
+
+@property --white-pinkish {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #E0D4DE;
+}
+
 @font-face {
   font-family: 'Calluna';
   src: url('/fonts/Calluna-Regular-webfont.woff2') format('woff2'),
@@ -14,16 +32,17 @@
   font-style: normal;
 }
 
-body {
-  font-family: 'Calluna Sans', serif;
-  /* background-color: #3D649B;
-  color: white; */
+html, body {
+  font-family: 'Calluna Sans', sans-serif;
   font-size: 16pt;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behaviour: smooth;
 }
 
 .welcome {
-  font-family: 'Calluna', sans-serif;
+  font-family: 'Calluna', serif;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -42,6 +61,10 @@ body {
   font-weight: normal;
 }
 
+.and {
+  color: var(--pinkish);
+}
+
 .welcome p {
   position: absolute;
   top: 70%;
@@ -53,6 +76,16 @@ body {
   font-weight: normal;
 }
 
+.welcome p.global-date {
+  top: 1%;
+  left: 2%;
+  transform: translate(0%, -50%);
+  font-size: 16pt;
+  font-weight: normal;
+  font-variant: italic;
+  opacity: 0.4;
+}
+
 .rsvp-button {
   font-family: 'Calluna Sans', sans-serif;
   position: absolute;
@@ -60,21 +93,22 @@ body {
   right: 20px;
   padding: 10px 20px;
   background-color: white;
-  color: #3D649B;
+  /* color: #3D649B; */
+  color: var(--reddish);
   border-radius: 15px;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  opacity: 0.7;
+  opacity: 0.9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.rsvp-button:hover {
-  background-color: #3D649B;
-  color: white;
+.rsvp-button:link, .rsvp-button:visited {
+  border-bottom: 0;
 }
 
-.scroll-arrow {
+a.scroll-arrow {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -82,7 +116,12 @@ body {
   font-size: 24px;
   color: white;
   text-decoration: none;
-  animation: fade-in-out 4s infinite;
+  animation: fade-in-out 3s infinite;
+}
+
+.scroll-arrow:link, .scroll-arrow:visited {
+  color: white;
+  border-bottom: 0;
 }
 
 .scroll-arrow:hover {
@@ -98,3 +137,157 @@ main {
   margin-left: 1em;
   margin-right: 1em;
 }
+
+.date-loc {
+  font-size: x-large;
+  margin-top: 4pt;
+  margin-bottom: 4pt;
+}
+
+main h2 {
+  color: var(--reddish);
+  margin-top: 2ex;
+}
+
+ul.date-locations {
+  list-style-type: none;
+  padding: 0;
+  font-size: 20pt;
+}
+
+.date-locations .date:after {
+  content: " · ";
+  color: var(--pinkish);
+}
+
+a:link, a:visited {
+  color: var(--reddish);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--white-pinkish);
+}
+
+a:hover {
+  background-color: var(--pinkish);
+  color: white;
+}
+
+.event:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.events {
+    margin: 50px 0;
+    position: relative;
+}
+
+.events::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: var(--reddish);
+    transform: translateX(-50%);
+}
+
+.event {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.event:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    background: var(--reddish);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.event-description, .event-image {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.event img {
+  width: 35%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.event:nth-child(even) img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.event:nth-child(even) .event-image {
+  order: 2; /* Ensure the image is on the right */
+  text-align: right; /* Align image to the right */
+}
+
+.event:nth-child(even) img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.event:nth-child(odd) .event-description {
+  text-align: right;
+}
+
+
+.event .date-time, .event .location {
+  display: block;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.event a.location:visited, .event a.location:link {
+  border-bottom: 0;
+}
+
+.event-spacer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.event-spacer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3pt;
+  height: 100%;
+  background: white;
+}
+
+.event-spacer::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2pt;
+  height: 100%;
+  background: linear-gradient(var(--reddish) 50%, transparent 50%) 0 0 / 2pt 8pt repeat-y;
+}
+
+
+/*
+
+.event p {
+  font-size: 16pt;
+  color: #666;
+}
+*/

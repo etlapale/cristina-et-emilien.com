@@ -9,38 +9,79 @@
   <body>
     <header>
       <div class="welcome">
-	<h1>Cristina &amp; Émilien</h1>
+	<h1>Cristina <span class="and">&amp;</span> Émilien</h1>
 	<p>are getting married!</p>
+	<p class="global-date">15-20 July 2024</p>
 	<a href="#rsvp" class="rsvp-button">RSVP</a>
 	<a href="#main" class="scroll-arrow">↓</a>
       </div>
     </header>
     <main id="main">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      
+      <ul class="date-locations">
+	<li>
+	  <span class="date">Mon 15 July 2024</span><a class="location" href="https://maps.app.goo.gl/yKEXXTZnHS5ib2p86">La Motte, France</a>
+	</li>
+	<li>
+	  <span class="date">Sat 20 July 2024</span><a class="location" href="https://maps.app.goo.gl/PwU2gtVnAJcNiQ5S7">Sibiu, Romania</a>
+	</li>
+      </ul>
+
+      <p>We’re excited to welcome you to our wedding! And to show you the places we call home.</p>
+
+      <h2>Events</h2>
+
+      <div class="events">
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Monday 15, 11:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/yKEXXTZnHS5ib2p86">Mairie de La Motte</a>
+	    <p>Civil wedding at the town hall</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/la-motte.png" alt="La Motte en Provence">
+	  </div>
+	</div>
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Monday 15, 12:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/yKEXXTZnHS5ib2p86">La Motte</a>
+	    <p>Celebratory lunch at a restaurant</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/meal-01.png" alt="Lunch">
+	  </div>
+	</div>
+	<div class="event-spacer"></div>
+	<div class="event-spacer"></div>
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Saturday 20, 14:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/PwU2gtVnAJcNiQ5S7">Sibiu</a>
+	    <p>Religious ceremony at the Ursuline church</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/ursuline-01.png" alt="Church">
+	  </div>
+	</div>
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Saturday 20, 16:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/Dr8awPc6iS7FRR9QA">Sibiel</a>
+	    <p>Meal at the Portal Village in Sibiel</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/portal-01.png" alt="Portal Village">
+	  </div>
+	</div>
+      </div>
 
       <h2 id="rsvp">RSVP</h2>
       <form>
       </form>
+
+      <h2>Contact</h2>
     </main>
+    <script src="scripts.js"></script>
   </body>
 </html>

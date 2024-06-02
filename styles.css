@@ -26,8 +26,8 @@
 
 @font-face {
   font-family: 'Calluna Sans';
-  src: url('/fonts/CallunaSans-Regular-webfont.woff2') format('woff2'),
-       url('/fonts/CallunaSans-Regular-webfont.woff') format('woff');
+  src: url('/fonts/CallunaSansRegular-webfont.woff2') format('woff2'),
+       url('/fonts/CallunaSansRegular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +48,12 @@ html, body {
   height: 100vh;
   background: url('images/DSC_5434.jpg') no-repeat center center;
   background-size: cover;
+}
+
+@media (max-width: 600px) {
+  .welcome  {
+    background-position: center top;
+  }
 }
 
 .welcome h1 {
@@ -110,7 +116,7 @@ html, body {
 
 a.scroll-arrow {
   position: absolute;
-  bottom: 20px;
+  bottom: 2vh;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
@@ -136,6 +142,7 @@ a.scroll-arrow {
 main {
   margin-left: 1em;
   margin-right: 1em;
+  padding-bottom: 4ex;
 }
 
 .date-loc {
@@ -196,7 +203,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: 2vh 0;
   position: relative;
 }
 
@@ -218,10 +225,40 @@ a:hover {
 }
 
 .event img {
-  width: 35%;
   height: auto;
+  width: 35%;
   border-radius: 10px;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .event img {
+    width: 36%;
+  }
+}
+
+@media (max-width: 800px) {
+  .event img {
+    width: 37%;
+  }
+}
+
+@media (max-width: 768px) {
+  .event img {
+    width: 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  .event img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event img {
+    width: 60%;
+  }
 }
 
 .event:nth-child(even) img {
@@ -283,11 +320,86 @@ a:hover {
   background: linear-gradient(var(--reddish) 50%, transparent 50%) 0 0 / 2pt 8pt repeat-y;
 }
 
-
-/*
-
-.event p {
-  font-size: 16pt;
-  color: #666;
+#result-message {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 24em;
+  margin: 3ex auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
-*/
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 24em;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-form fieldset {
+  border: 1px solid var(--reddish);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.rsvp-form legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: var(--reddish);
+}
+
+.rsvp-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.rsvp-form input[type="text"],
+.rsvp-form input[type="email"],
+.rsvp-form input[type="tel"],
+.rsvp-form input[type="number"],
+.rsvp-form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.rsvp-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.rsvp-form .modify-message {
+    font-size: 14px;
+    color: var(--pinkish);
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.rsvp-form button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--reddish);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rsvp-form button:hover {
+    background-color: var(--pinkish);
+}
+
+blockquote {
+  margin: 0;
+  color: var(--pinkish);
+}

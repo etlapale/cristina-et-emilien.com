@@ -29,7 +29,7 @@
 
       <p>We’re excited to welcome you to our wedding! And to show you the places we call home.</p>
 
-      <h2>Events</h2>
+      <h2>What’s on</h2>
 
       <div class="events">
 	<div class="event">
@@ -56,6 +56,26 @@
 	<div class="event-spacer"></div>
 	<div class="event">
 	  <div class="event-description">
+	    <span class="date-time">Friday 19, 11:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/dE1i52QAQUE1Kb2ZA">Sibiu</a>
+	    <p>Guided visit of Sibiu</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/sibiu-01.png" alt="Barbecue">
+	  </div>
+	</div>
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Friday 19, 19:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/Dr8awPc6iS7FRR9QA">Sibiel</a>
+	    <p>Evening barbecue at the Portal Village</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/bbq-01.png" alt="Barbecue">
+	  </div>
+	</div>
+	<div class="event">
+	  <div class="event-description">
 	    <span class="date-time">Saturday 20, 14:00</span>
 	    <a class="location" href="https://maps.app.goo.gl/PwU2gtVnAJcNiQ5S7">Sibiu</a>
 	    <p>Religious ceremony at the Ursuline church</p>
@@ -68,20 +88,135 @@
 	  <div class="event-description">
 	    <span class="date-time">Saturday 20, 16:00</span>
 	    <a class="location" href="https://maps.app.goo.gl/Dr8awPc6iS7FRR9QA">Sibiel</a>
-	    <p>Meal at the Portal Village in Sibiel</p>
+	    <p>Dinner and party at the Portal Village in Sibiel</p>
 	  </div>
 	  <div class="event-image">
 	    <img src="images/portal-01.png" alt="Portal Village">
 	  </div>
 	</div>
+	<div class="event">
+	  <div class="event-description">
+	    <span class="date-time">Sunday 21, 11:00</span>
+	    <a class="location" href="https://maps.app.goo.gl/Dr8awPc6iS7FRR9QA">Sibiel</a>
+	    <p>Brunch on the morning after</p>
+	  </div>
+	  <div class="event-image">
+	    <img src="images/brunch-01.png" alt="Portal Village">
+	  </div>
+	</div>
       </div>
 
-      <h2 id="rsvp">RSVP</h2>
-      <form>
-      </form>
+      <h2>Accommodations</h2>
+      <p>We arranged booking for a limited number of accommodations in Sibiel during the wedding. If you would like to be assigned to one of them, please mention it in the RSVP form.</p>
 
-      <h2>Contact</h2>
+      <h2 id="questions">Questions?</h2>
+      <blockquote>How do I get to Romania?</blockquote>
+      <p>The closest airport is <a href="https://maps.app.goo.gl/8cezecXTV4ZiahUB6">Sibiu international airport (SBZ)</a> with daily connections to London. If you arrive at Sibiu airport, we are arranging a minibus 🚌 to transport you to Sibiel. This minibus will also take you to Sibiu and back on Friday for the town visit, and on Saturday for the church ceremony. Let us know your itinerary as soon as you know it (you can re-submit the RSVP).</p>
+
+      <blockquote>Do I need to attend every single event? 🥱 😫</blockquote>
+      <p>Feel free to pick amongst the events you want to attend to, selecting them in the RSVP</p>
+
+      <blockquote>How should I dress?</blockquote>
+      <p>Cristina is telling people it's an avant-garde fashion event. Émilien believes it's a casual event in the forest. Feel free to come as you wish (Cristina: no tracksuits please). In France the weather is relatively hot all day long. In Romania the evenings get cooler and a jacket is required. Cristina says the venue doesn't encourage stilettos but she will still wear them to be taller than the guests.</p>
+
+      <blockquote>I have more questions</blockquote>
+      <p>You can try one of the following groups:</p>
+      <p><a href="https://chat.whatsapp.com/DPz8AHGuRBpBn17kxa82nD">WhatsApp group</a>
+	·
+	<a href="https://t.me/+zH5Jt6VldWIwZTNk">Telegram group</a>
+      </p>
+      <p>Or just put some as comments in the RSVP form.</p>
+
+      <h2 id="rsvp">RSVP</h2>
+      <p>To change your choices, just submit again or contact us.</p>
+      <form id="rsvp-form" class="rsvp-form">
+	<!-- Contact information -->
+	<fieldset>
+	  <legend>Contact information</legend>
+
+	  <label for="name">Name of all attending people</label>
+	  <input type="text" id="name" name="name" required>
+
+	  <label for="email">Email(s)</label>
+	  <input type="email" id="email" name="email">
+
+	  <label for="phone">Phone number(s)</label>
+	  <input type="tel" id="phone" name="phone">
+	</fieldset>
+
+	<!-- Attendance -->
+	<fieldset>
+	  <legend>Attendance in France</legend>
+	  <label>
+	    <input type="checkbox" name="civil-ceremony" value="yes">
+	    Civil ceremony
+	  </label>
+	  <label>
+	    <input type="checkbox" name="celebratory-lunch" value="yes">
+	    Celebratory lunch
+	  </label>
+	</fieldset>
+	<fieldset>
+	  <legend>Attendance in Romania</legend>
+	  <label>
+	    <input type="checkbox" name="request-accommodation" value="yes">
+	    Assign me/us an accommodation
+	  </label>
+	  <label>
+	    <input type="checkbox" name="guided-tour" value="yes">
+	    Guided tour of Sibiu
+	  </label>
+	  <label>
+	    <input type="checkbox" name="friday-bbq" value="yes">
+	    Friday night barbecue
+	  </label>
+	  <label>
+	    <input type="checkbox" name="religious-ceremony" value="yes">
+	    Religious ceremony
+	  </label>
+	  <label>
+	    <input type="checkbox" name="celebratory-dinner" value="yes">
+	    Celebratory dinner
+	  </label>
+	</fieldset>
+
+	<!-- Food preferences -->
+	<fieldset>
+	  <legend>Food preferences</legend>
+	  <label>
+	    <input type="checkbox" name="rabbit" value="yes">
+	    🐇
+	  </label>
+	  <label>
+	    <input type="checkbox" name="vegan" value="yes">
+	    Vegan
+	  </label>
+	  <label>
+	    <input type="checkbox" name="vegetarian" value="yes">
+	    Vegetarian
+	  </label>
+	  <label for="allergies">Allergies</label>
+	  <input type="text" id="allergies" name="allergies">
+	  <label for="other-food">Other preferences</label>
+	  <input type="text" id="other-food" name="other-food">
+	</fieldset>
+
+	<fieldset>
+	  <legend>Travel details</legend>
+	  <textarea id="travel-details" name="travel-details" rows="4"></textarea>
+	</fieldset>
+
+	<fieldset>
+	  <legend>Comments</legend>
+	  <textarea id="comments" name="comments" rows="4"></textarea>
+	</fieldset>
+	<button type="submit">Submit</button>
+      </form>
+      <div id="result-message" style="display: none;"></div>
     </main>
+    <footer>
+      <p><a href="
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>

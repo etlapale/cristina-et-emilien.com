@@ -142,7 +142,7 @@ a.scroll-arrow {
 main {
   margin-left: 1em;
   margin-right: 1em;
-  padding-bottom: 4ex;
+  padding-bottom: 2vh;
 }
 
 .date-loc {
@@ -402,4 +402,53 @@ a:hover {
 blockquote {
   margin: 0;
   color: var(--pinkish);
+}
+
+footer {
+  font-size: 8pt;
+  text-align: center;
+  padding-bottom: 2vh;
+  color: grey;
+}
+
+footer a:link, footer a:visited {
+  color: gray;
+}
+
+#chatbot-input {
+  font-family: 'Calluna Sans', sans-serif;
+  font-size: 14pt;
+  color: var(--pinkish);
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: var(--reddish);
+  width: 24em;
+}
+
+@media (max-width: 600px) {
+  #chatbot-input {
+    width: 15em;
+  }
+}
+
+#chatbot-button {
+  font-family: 'Calluna Sans', sans-serif;
+  font-size: 14pt;
+  /*padding: 10px 20px;*/
+  background-color: var(--reddish);
+  color: white;
+  border-radius: 5px;
+  border-width: 1px;
+  font-weight: bold;
+}
+
+#chatbot-button:hover {
+  background-color: var(--pinkish);
+}
+
+.wcbot {
+  color: var(--reddish);
+  background-color: #fae0e0;
+  border-radius: 4pt;
+  padding: 2pt;
 }

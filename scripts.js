@@ -51,4 +51,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	resultMessage.textContent = "We couldn't reach each other! Try again later";
     }
   });
+
+  // Chatbot handler
+  document.getElementById('chatbot-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const textInput = document.getElementById('chatbot-input').value;
+    const body = JSON.stringify({'input': textInput});
+    console.log(body);
+    try {
+    } catch (error) {
+    }
+  });
 });

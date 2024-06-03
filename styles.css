@@ -1,19 +1,19 @@
 @property --reddish {
   syntax: "<color>";
   inherits: false;
-  initial-value: #8c2133;
+  initial-value: #7A2741;
 }
 
 @property --pinkish {
   syntax: "<color>";
   inherits: false;
-  initial-value: #FF8492;
+  initial-value: #FF8693;
 }
 
 @property --white-pinkish {
   syntax: "<color>";
   inherits: false;
-  initial-value: #E0D4DE;
+  initial-value: #F2D1FE;
 }
 
 @font-face {
@@ -23,6 +23,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 @font-face {
   font-family: 'Calluna Sans';
@@ -67,29 +69,29 @@ html, body {
   font-weight: normal;
 }
 
-.and {
-  color: var(--pinkish);
-}
+
 
 .welcome p {
   position: absolute;
-  top: 70%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   font-size: 22pt;
   font-weight: normal;
+
 }
 
 .welcome p.global-date {
-  top: 1%;
-  left: 2%;
-  transform: translate(0%, -50%);
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 16pt;
   font-weight: normal;
   font-variant: italic;
   opacity: 0.4;
+  /*align-items: center;*/
 }
 
 .rsvp-button {
@@ -425,11 +427,6 @@ footer a:link, footer a:visited {
   width: 24em;
 }
 
-@media (max-width: 600px) {
-  #chatbot-input {
-    width: 15em;
-  }
-}
 
 #chatbot-button {
   font-family: 'Calluna Sans', sans-serif;
@@ -452,3 +449,55 @@ footer a:link, footer a:visited {
   border-radius: 4pt;
   padding: 2pt;
 }
+
+.allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.welcome p.passions-conflict-regular {
+  font-family: "Passions Conflict", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50pt;
+
+}
+
+.and {
+  /*color: var(--pinkish);*/
+  font-family: "Passions Conflict", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80pt;
+
+}
+
+
+@media (max-width: 600px) {
+  #chatbot-input {
+    width: 15em;
+  }
+
+  .and {
+  font-size: 50pt;}
+
+  .welcome h1 {
+    font-size: 30pt;
+  }
+
+  .welcome p.passions-conflict-regular {
+  font-family: "Passions Conflict", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30pt;
+
+}
+}
+
+
+
+
+
+
+

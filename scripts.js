@@ -53,13 +53,60 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Chatbot handler
-  document.getElementById('chatbot-form').addEventListener('submit', async function(event) {
+  const inputElement = document.getElementById('chatbot-input');
+  const chatbotForm = document.getElementById('chatbot-form');
+  chatbotForm.addEventListener('submit', async function(event) {
     event.preventDefault();
-    const textInput = document.getElementById('chatbot-input').value;
-    const body = JSON.stringify({'input': textInput});
+    const query = inputElement.value;
+    const body = JSON.stringify({'query': query, 'history': []});
+    const discussion = document.getElementById('chatbot-discussion');
+
+    // Create a new element for the question
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('chatbot-question');
+    questionElement.textContent = query;
+    discussion.appendChild(questionElement);
+    
+    inputElement.value = '';
+
     console.log(body);
     try {
+      const response = await fetch('https://aurhcexgg4.execute-api.eu-west-1.amazonaws.com/chatbot', {
+	method: 'POST',
+	headers: { 'Content-Type': 'application/json' },
+	body: body,
+      });
+      if (response.ok) {
+	const answer = await response.text();
+	console.log('chatbot answer:');
+	console.log(answer);
+
+	const answerElement = document.createElement('div');
+	answerElement.classList.add('chatbot-answer');
+	answerElement.textContent = answer;
+	discussion.appendChild(answerElement);
+      } else {
+	console.warn('failed rsvp submission');
+	console.log(response);
+	const answerElement = document.createElement('div');
+	answerElement.classList.add('chatbot-error');
+	answerElement.textContent = 'The chatbot is out-of-order!';
+	discussion.appendChild(answerElement);
+      }
     } catch (error) {
+      console.warn("error: " + error.message);
+      const answerElement = document.createElement('div');
+      answerElement.classList.add('chatbot-error');
+      answerElement.textContent = 'The chatbot is out-of-order!';
+      discussion.appendChild(answerElement);
+    }
+  });
+
+  // Make Enter trigger the submit
+  inputElement.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      chatbotForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+      event.preventDefault(); // Prevent the default action to avoid duplicate submissions
     }
   });
 });

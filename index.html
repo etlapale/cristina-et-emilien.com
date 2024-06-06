@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristina et Émilien</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ole&family=Passions+Conflict&display=swap" rel="stylesheet">
-
+    <meta name="title" content="Cristina et Émilien">
+    <meta name="description" content="Cristina et Émilien are getting married in July 2024">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cristina-et-emilien.com">
+    <meta property="og:image" content="https://www.cristina-et-emilien.com/images/DSC_5434.jpg">
+    <link rel="icon" type="image/png" size="16x16" href="images/favicon-16.png">
+    <link rel="icon" type="image/png" size="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" size="64x64" href="images/favicon-64.png">
+    <link rel="icon" type="image/png" size="128x128" href="images/favicon-128.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ole&family=Passions+Conflict&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
   </head>
   <body>
     <header>
       <div class="welcome">
 	<h1>Cristina <span class="and passions-conflict-regular">&amp;</span> Émilien</h1>
-	<p class="passions-conflict-regular">are getting married!</p>
-	<p class="global-date">15-20 July 2024</p>
-	<a href="#rsvp" class="rsvp-button">RSVP</a>
+	<p class="passions-conflict-regular" id="are-getting-married">are getting married!</p>
+	<p class="global-date" id="global-date">15-20 July 2024</p>
+	<div class="top-buttons">
+	  <a href="#chatbot" class="chatbot-button">🤖</a>
+	  <a href="#rsvp" id="rsvp-button" class="rsvp-button">RSVP</a>
+	</div>
 	<a href="#main" class="scroll-arrow">↓</a>
       </div>
     </header>
@@ -25,16 +35,16 @@
       
       <ul class="date-locations">
 	<li>
-	  <span class="date">Mon 15 July 2024</span><a class="location" href="https://maps.app.goo.gl/yKEXXTZnHS5ib2p86">La Motte, France</a>
+	  <span class="date" id="date-15-jul">Mon 15 July 2024</span><a class="location" href="https://maps.app.goo.gl/yKEXXTZnHS5ib2p86">La Motte, France</a>
 	</li>
 	<li>
-	  <span class="date">Sat 20 July 2024</span><a class="location" href="https://maps.app.goo.gl/PwU2gtVnAJcNiQ5S7">Sibiu, Romania</a>
+	  <span class="date" id="date-20-jul">Sat 20 July 2024</span><a class="location" href="https://maps.app.goo.gl/PwU2gtVnAJcNiQ5S7">Sibiu, Romania</a>
 	</li>
       </ul>
 
       <p>We’re excited to welcome you to our wedding! And to show you the places we call home.</p>
 
-      <h2>What’s on</h2>
+      <h2 id="whats-on">What’s on</h2>
 
       <div class="events">
 	<div class="event">
@@ -111,7 +121,7 @@
 	</div>
       </div>
 
-      <h2>Accommodations</h2>
+      <h2 id="accommodations">Accommodations</h2>
       <p>You may think you are coming to a little village in the middle of nowhere, but Sibiel is very popular with Romanians who want to connect to nature.</p>
       <p>We arranged booking for about twenty rooms in Sibiel between Thursday 18th of July and Sunday 21st of July. If you would like to be assigned to one of them, please mention it in the RSVP form, as soon as possible and before mid-June as we won't be able to cancel the unused bookings after that.</p>
       <p>Below are the accommodations we booked. Everything is within 15-20 mins walking from each other. </p>
@@ -139,7 +149,7 @@
       </p>
       <p>Or just put some as comments in the RSVP form.</p>
 
-      <blockquote>I still have questions</blockquote>
+      <a name="chatbot" id="chatbot"><blockquote id="still-questions">I still have questions</blockquote></a>
       <p>You can try asking our <span class="wcbot">🤖 wedding chatbot</span>! It will take its time to find the right words, so allow it a few seconds to read the answer.</p>
       <div id="chatbot-discussion">
       </div>
@@ -161,7 +171,7 @@
 	  <label for="email">Email(s)</label>
 	  <input type="email" id="email" name="email">
 
-	  <label for="phone">Phone number(s)</label>
+	  <label for="phone" id="phone-label">Phone number(s)</label>
 	  <input type="tel" id="phone" name="phone">
 	</fieldset>
 
@@ -175,6 +185,10 @@
 	  <label>
 	    <input type="checkbox" name="celebratory-lunch" value="yes">
 	    Celebratory lunch
+	  </label>
+	  <label>
+	    <input type="checkbox" name="no-france" value="yes">
+	    Not attending in France
 	  </label>
 	</fieldset>
 	<fieldset>
@@ -198,6 +212,10 @@
 	  <label>
 	    <input type="checkbox" name="celebratory-dinner" value="yes">
 	    Celebratory dinner
+	  </label>
+	  <label>
+	    <input type="checkbox" name="no-romania" value="yes">
+	    Not attending in Romania
 	  </label>
 	</fieldset>
 
@@ -224,20 +242,26 @@
 
 	<fieldset>
 	  <legend>Travel details</legend>
-	  <textarea id="travel-details" name="travel-details" rows="4"></textarea>
+	  <textarea id="travel-details" name="travel-details" rows="3"></textarea>
 	</fieldset>
 
 	<fieldset>
-	  <legend>Comments</legend>
-	  <textarea id="comments" name="comments" rows="4"></textarea>
+	  <legend id="music-suggestions-label">Music suggestions</legend>
+	  <textarea id="music-suggestions" name="music-suggestions" rows="3"></textarea>
 	</fieldset>
-	<button type="submit">Submit</button>
+
+	<fieldset>
+	  <legend id="comments-label">Comments</legend>
+	  <textarea id="comments" name="comments" rows="3"></textarea>
+	</fieldset>
+	<button type="submit" id="rsvp-submit">Submit</button>
       </form>
       <div id="result-message" style="display: none;"></div>
     </main>
     <footer id="footer">
-      <p><a href="https://github.com/etlapale/cristina-et-emilien.com">Source code</a></p>
+      <p><a href="https://github.com/etlapale/cristina-et-emilien.com" id="source-code-link">Source code</a></p>
     </footer>
     <script src="scripts.js"></script>
+    <script src="translations.js"></script>
   </body>
 </html>

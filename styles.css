@@ -44,6 +44,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Calluna Sans';
+  src: url('/fonts/CallunaSansItalic-webfont.woff2') format('woff2'),
+       url('/fonts/CallunaSansItalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
 html, body {
   font-family: 'Calluna Sans', sans-serif;
   font-size: 16pt;
@@ -95,20 +103,29 @@ html, body {
 
 .welcome p.global-date {
   top: 2%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16pt;
+  left: 3%;
+  transform: translate(0%, -50%);
+  font-size: 14pt;
   font-weight: normal;
   font-variant: italic;
   opacity: 0.4;
   /*align-items: center;*/
 }
 
-.rsvp-button {
-  font-family: 'Calluna Sans', sans-serif;
+.top-buttons {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 6pt;
+}
+
+.chatbot-button, .rsvp-button {
+  /*
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  */
   padding: 10px 20px;
   background-color: white;
   /* color: #3D649B; */
@@ -118,8 +135,18 @@ html, body {
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  opacity: 0.9;
+  opacity: 0.8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-button {
+  padding-left: 8pt;
+  padding-right: 8pt;
+  opacity: 0.8;
+}
+
+.rsvp-button {
+  font-family: 'Calluna Sans', sans-serif;
 }
 
 .rsvp-button:link, .rsvp-button:visited {
@@ -449,6 +476,7 @@ footer a:link, footer a:visited {
   border-width: 1px;
   font-weight: bold;
   padding: 4pt;
+  margin-top: 1ex;
 }
 
 #chatbot-button:hover {
@@ -500,7 +528,7 @@ footer a:link, footer a:visited {
   font-weight: 400;
   font-style: normal;
   font-size: 50pt;
-
+  line-height: 90%;
 }
 
 .and {
@@ -509,7 +537,9 @@ footer a:link, footer a:visited {
   font-weight: 400;
   font-style: normal;
   font-size: 80pt;
-
+  color: #ffd1fe;
+  margin-right: 1pt;
+ /*color: var(--pinkish);*/
 }
 
 @media (max-width: 600px) {
@@ -537,6 +567,6 @@ footer a:link, footer a:visited {
     font-weight: 400;
     font-style: normal;
     font-size: 30pt;
-
+    top: 60%;
   }
 }

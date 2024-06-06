@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Smooth scrolling to sections when scroll or rsvp buttons are pressed
-  const smoothScrollLinks = document.querySelectorAll('.scroll-arrow, .rsvp-button');
+  const smoothScrollLinks = document.querySelectorAll('.scroll-arrow, .rsvp-button, .chatbot-button');
   smoothScrollLinks.forEach(link => {
     link.addEventListener('click', function(event) {
       event.preventDefault();

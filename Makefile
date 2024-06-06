@@ -9,7 +9,10 @@ CHAT_LAMBDA_ZIP=chat_lambda_function.zip
 all: code fonts images
 
 code:
-	aws --profile $(PROFILE) s3 cp index.html scripts.js translations.js styles.css s3://$(BUCKET)/
+	aws --profile $(PROFILE) s3 cp index.html s3://$(BUCKET)/
+	aws --profile $(PROFILE) s3 cp scripts.js s3://$(BUCKET)/
+	aws --profile $(PROFILE) s3 cp translations.js s3://$(BUCKET)/
+	aws --profile $(PROFILE) s3 cp styles.css s3://$(BUCKET)/
 
 fonts:
 	aws --profile $(PROFILE) s3 cp --recursive fonts s3://$(BUCKET)/fonts

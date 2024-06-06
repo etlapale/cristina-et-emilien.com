@@ -1,3 +1,5 @@
+var dialogHistory = [];
+
 document.addEventListener('DOMContentLoaded', function() {
   // Smooth scrolling to sections when scroll or rsvp buttons are pressed
   const smoothScrollLinks = document.querySelectorAll('.scroll-arrow, .rsvp-button, .chatbot-button');
@@ -58,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
   chatbotForm.addEventListener('submit', async function(event) {
     event.preventDefault();
     const query = inputElement.value;
-    const body = JSON.stringify({'query': query, 'history': []});
+    const body = JSON.stringify({'query': query, 'history': dialogHistory});
+    dialogHistory.push(query);
     const discussion = document.getElementById('chatbot-discussion');
 
     // Create a new element for the question

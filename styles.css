@@ -1,3 +1,11 @@
+:root {
+  --reddish: #7A2741;
+  --whiter-reddish: #fae7f1;
+  --light-reddish: #da87a1;
+  --pinkish: #FF8693;
+  --white-pinkish: #F2D1FE;
+}
+
 @property --reddish {
   syntax: "<color>";
   inherits: false;

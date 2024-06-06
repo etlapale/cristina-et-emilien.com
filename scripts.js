@@ -112,4 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault(); // Prevent the default action to avoid duplicate submissions
     }
   });
+
+  // Lazy load the hi-res background image
+  const welcomeElement = document.getElementById('welcome');
+  const highResImage = new Image();
+  highResImage.src = 'images/DSC_5434.jpg';
+  highResImage.onload = function() {
+    welcomeElement.style.backgroundImage = `url(${highResImage.src})`;
+  };
 });
